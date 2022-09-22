@@ -46,11 +46,6 @@ export default function Layout({ title, children }) {
         <title>
           {title ? `${title} - GOLAZO` : "GOLAZO"}
         </title>
-        <meta name="description" content="The story behind My Website" />
-        <meta property="og:title" content="Cho nhận" />
-        <meta property="og:description" content="The story behind My Website" />
-        <meta property="og:url" content="https://chonhan.api-server-dev.com/" />
-        <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Sidebar/>
