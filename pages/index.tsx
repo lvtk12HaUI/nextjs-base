@@ -14,7 +14,8 @@ import Paper from '@mui/material/Paper';
 const Page: NextPageWithLayout = () => {
   const [users, setUsers] = useState([{
     id: 0,
-    name: "",
+    first_name: "",
+    last_name: "",
     email: "",
   }])
 
@@ -28,7 +29,7 @@ const Page: NextPageWithLayout = () => {
       }
     };
     fetchProduct()
-  })
+  }, [])
 
   return (
     <TableContainer component={Paper} sx={{ maxWidth: 650}} style={{margin: '100px auto',}}>
@@ -36,7 +37,7 @@ const Page: NextPageWithLayout = () => {
         <TableHead>
           <TableRow>
             <TableCell>ID</TableCell>
-            <TableCell align="right">Name</TableCell>
+            <TableCell align="right">FullName</TableCell>
             <TableCell align="right">Email</TableCell>
           </TableRow>
         </TableHead>
@@ -47,10 +48,10 @@ const Page: NextPageWithLayout = () => {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {user.id}
+                {user.id ??  ''}
               </TableCell>
-              <TableCell align="right">{user.name}</TableCell>
-              <TableCell align="right">{user.email}</TableCell>
+              <TableCell align="right">{(user.first_name ?? '') + ' ' + (user.first_name)}</TableCell>
+              <TableCell align="right">{user.email ?? ''}</TableCell>
             </TableRow>
           ))}
         </TableBody>

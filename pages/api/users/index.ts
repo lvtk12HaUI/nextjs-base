@@ -11,7 +11,7 @@ export default async function handler(req: any, res: any) {
 
 const getUses = async (req: any, res: any) => {
   try {
-    const result = await connect.query('SELECT id, name, email FROM pcm_users');
+    const result = await connect.query('SELECT id, first_name, last_name, email FROM users');
     
     return res.status(200).json(result);
   } catch (error) {
